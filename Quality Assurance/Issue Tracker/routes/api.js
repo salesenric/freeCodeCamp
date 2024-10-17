@@ -12,13 +12,13 @@ const IssueSchema = new mongoose.Schema({
   created_on: { type: Date, default: Date.now },
   updated_on: { type: Date, default: Date.now },
   open: { type: Boolean, default: true },
+  project: { type: String, required: true } // Add the project field
 });
 
 const Issue = mongoose.model('Issue', IssueSchema);
 
 module.exports = function (app) {
   app.route('/api/issues/:project')
-    
     .get(async function (req, res) {
       const project = req.params.project;
       const filters = req.query; // Get filters from query parameters
@@ -26,6 +26,7 @@ module.exports = function (app) {
         const issues = await Issue.find({ project, ...filters });
         res.json(issues);
       } catch (error) {
+        console.error('Error fetching issues:', error); // Log the error
         res.status(500).json({ error: 'could not fetch issues' });
       }
     })
@@ -44,13 +45,14 @@ module.exports = function (app) {
         created_by,
         assigned_to: assigned_to || '',
         status_text: status_text || '',
-        project,
+        project, // Make sure the project field is set
       });
 
       try {
         const savedIssue = await newIssue.save();
         res.json({ ...savedIssue._doc, created_on: savedIssue.created_on, updated_on: savedIssue.updated_on });
       } catch (error) {
+        console.error('Error creating issue:', error); // Log the error
         res.status(500).json({ error: 'could not create issue' });
       }
     })
@@ -74,6 +76,7 @@ module.exports = function (app) {
         }
         res.json({ result: 'successfully updated', _id });
       } catch (error) {
+        console.error('Error updating issue:', error); // Log the error
         res.json({ error: 'could not update', _id });
       }
     })
@@ -93,6 +96,7 @@ module.exports = function (app) {
         }
         res.json({ result: 'successfully deleted', _id });
       } catch (error) {
+        console.error('Error deleting issue:', error); // Log the error
         res.json({ error: 'could not delete', _id });
       }
     });
