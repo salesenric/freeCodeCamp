@@ -1,6 +1,7 @@
 'use strict';
 
 const express     = require('express');
+const mongoose = require('mongoose');
 const bodyParser  = require('body-parser');
 const cors        = require('cors');
 require('dotenv').config();
@@ -8,6 +9,11 @@ require('dotenv').config();
 const apiRoutes         = require('./routes/api.js');
 const fccTestingRoutes  = require('./routes/fcctesting.js');
 const runner            = require('./test-runner');
+
+// Connect to MongoDB
+mongoose.connect(process.env.DB)
+.then(() => console.log('MongoDB connected'))
+.catch(err => console.error('MongoDB connection error:', err));
 
 const app = express();
 
