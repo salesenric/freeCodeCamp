@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
+p {
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+#choropleth {
+  margin: 20px auto;
+  display: block;
+}
+
+#tooltip {
+  background-color: white;
+  border: 1px solid black;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.county {
+  stroke: #fff;
+  stroke-width: 0.5px;
+}
+
+#legend {
+  font-size: 14px;
+}
