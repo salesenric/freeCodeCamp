@@ -1,0 +1,30 @@
+#image {
+  height:auto;
+  max-width:100%;
+  justify-content:center;
+}
+
+img {
+  display:block;
+}
+
+* {
+  text-align:center;
+}
+
+main {
+  background-color:lightgrey;
+}
+
+h1, h2 {
+  font-family:Tahoma, Verdana;
+}
+
+ul {
+  display: block;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-inline-start: 0;
+  margin-block: 0;
+}
