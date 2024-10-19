@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+#title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#description {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cell {
+    stroke: #ddd; /* Cell border color */
+}
+
+#tooltip {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0; /* Initially hidden */
+}
+
+.axis text {
+    font-size: 12px; /* Font size for axis labels */
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
