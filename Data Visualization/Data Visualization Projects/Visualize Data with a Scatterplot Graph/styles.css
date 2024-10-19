@@ -1,0 +1,14 @@
+.dot {
+  stroke: black;
+  stroke-width: 1px;
+}
+
+.tooltip {
+  position: absolute;
+  text-align: center;
+  width: auto;
+  padding: 10px;
+  background: lightsteelblue;
+  border-radius: 5px;
+  pointer-events: none;
+}
