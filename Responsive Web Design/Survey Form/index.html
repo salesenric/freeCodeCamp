@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css"/>
+  </head>
+  <body>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Thanks for taking the time to help us improve</p>
+    <form method="post" id="survey-form" action="https://www.google.com">
+      <label id="name-label">Name<input id="name" name="name" type="text" placeholder="Name" required></label>
+      <label id="email-label">Email<input id="email" name="email" type="email" placeholder="Email" required></label>
+      <label id="number-label">Age (optional)<input id="number" name="number" type="number" placeholder="Age" min="18" max="100"></label>
+      <label for="role"> Current role:
+       <select id="dropdown" name="role" required>
+        <option value="">Select current role</option>
+        <option value="1">Student</option>
+        <option value="2">Worker</option>
+        <option value="3">Other</option>
+       </select>
+      </label>
+      <label name="recommend"> Would you recommend us?
+        <label><input type="radio" value="1" name="recommend" class="inline" checked>Yes</label>
+        <label><input type="radio" value="0" name="recommend" class="inline">No</label>
+      </label>
+      <label name="improve"> What would you improve?
+        <label><input type="checkbox" value="1" class="inline" checked> FAQ</label>
+        <label><input type="checkbox" value="0" class="inline"> Home</label>
+      </label>
+      <label name="comments"> Any comments?
+        <textarea placeholder="Comments"></textarea>
+      </label>
+      <input id="submit" type="submit" value="Submit" />
+    </form>
+  </body>
+  <footer>
+  </footer>
+</html>
