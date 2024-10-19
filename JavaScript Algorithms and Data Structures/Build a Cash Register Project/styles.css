@@ -1,0 +1,114 @@
+button {
+  width:80px;
+  height:25px;
+}
+
+/*
+
+let price = 19.5;
+let cid = [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]];
+
+let valuesToAdd = [0.01, 0.05, 0.1, 0.25, 1, 5, 10, 20, 100];
+let cidCopy = cid.map((item, index) => {
+  return [...item, valuesToAdd[index]];
+}).reverse();
+
+let changeAvailable=document.getElementById("change-available");
+let totalPrice=document.getElementById("price");
+let cash=document.getElementById("cash");
+let changeDue=document.getElementById("change-due");
+let changeGive=document.getElementById("change-give");
+const purchaseBtn=document.getElementById("purchase-btn");
+
+let totalChange = parseFloat((cidCopy.reduce((sum, currency) => sum + currency[1], 0)).toFixed(2));
+
+totalPrice.innerHTML = `Total price: <strong>$${price}</strong>`;
+
+changeAvailable.innerHTML = `Change in drawer: <strong>$${totalChange}</strong><br>`;
+cidCopy.forEach(item => {
+  changeAvailable.innerHTML += ` <br>${item[0]}: $${item[1]}`;
+});
+
+const calculateChange = (changeBack) => {
+
+  let changeArr = [];
+  let changeBackCents = changeBack * 100;
+
+  for (let i = 0; i < cidCopy.length; i++) {
+    let currencyName = cidCopy[i][0];
+    let currencyInDrawer = parseFloat(cidCopy[i][1].toFixed(2)) * 100;
+    let currencyValue = parseFloat(cidCopy[i][2].toFixed(2)) * 100;
+    let amountToGive = 0;
+
+    while (changeBackCents >= currencyValue && currencyInDrawer > 0) {
+      changeBackCents -= currencyValue;
+      currencyInDrawer -= currencyValue;
+      amountToGive += currencyValue;
+    }
+
+    if (amountToGive > 0) {
+      changeArr.push([currencyName, amountToGive/100]);
+    }
+  }
+
+  if (changeBackCents > 0) {
+    changeDue.textContent = "Status: INSUFFICIENT_FUNDS";
+  }
+  else {
+    changeDue.textContent = "Status: OPEN";
+    changeArr.forEach(c => {
+      changeDue.innerHTML += ` ${c[0]}: $${c[1]}`;
+
+      for (let i = 0; i < cidCopy.length; i++) {
+        if (c[0] === cidCopy[i][0]) cidCopy[i][1]-=c[1];
+      }
+    });
+    totalChange = parseFloat((cidCopy.reduce((sum, curr) => sum + curr[1], 0)).toFixed(2));
+    changeAvailable.innerHTML = `Change in drawer: <strong>$${totalChange}</strong><br>`;
+    cidCopy.forEach(item => changeAvailable.innerHTML += `<br>${item[0]}: $${item[1]}`);
+  }
+}
+
+
+
+purchaseBtn.addEventListener("click", () => {
+
+  const cashProvided = parseFloat(cash.value);
+  const changeBack = parseFloat((cashProvided - price).toFixed(2));
+  
+  if (cash.value==="") {
+    alert("Please insert customer's cash");
+  }
+  else if (cashProvided < price) {
+    alert("Customer does not have enough money to purchase the item");
+  }
+  else if (cashProvided > price) {
+    if (changeBack < totalChange) {
+      changeGive.innerHTML = `Change to return: <strong>$${changeBack}</strong><br>`;
+      calculateChange(changeBack);
+    }
+    else if (changeBack > totalChange) {
+      changeDue.textContent = "Status: INSUFFICIENT_FUNDS";
+    }
+    else if (changeBack === totalChange) {
+      changeGive.innerHTML = `Change to return: <strong>$${changeBack}</strong><br>`;
+      changeDue.textContent = "Status: CLOSED";
+      cidCopy.forEach(c=>{
+        if(c[1]!==0) changeDue.textContent += " "+c[0]+": $"+c[1];
+        c[1]=0;
+      });
+      totalChange = 0;
+      changeAvailable.innerHTML = `Change in drawer: <strong>$${totalChange}</strong><br>`;
+      cidCopy.forEach(item => changeAvailable.innerHTML += `<br>${item[0]}: $${item[1]}`);
+    } else {
+      alert("?");
+    }
+  }
+  else {
+    changeGive.innerHTML = `Change to return: <strong>$${changeBack}</strong><br>`;
+    changeDue.textContent = "No change due - customer paid with exact cash";
+  }
+  cash.value = "";
+})
+
+*/
