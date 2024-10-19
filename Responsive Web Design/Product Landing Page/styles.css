@@ -1,0 +1,80 @@
+/* Basic styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 60px; /* Adjust based on nav-bar height */
+}
+
+#header {
+    position: relative;
+    width: 100%;
+}
+
+#nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+#nav-bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+#nav-bar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#header-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+main {
+    padding: 20px;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+/* Flexbox container for features */
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.feature-box {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Media Query for mobile devices */
+@media (max-width: 600px) {
+    #nav-bar ul {
+        flex-direction: column;
+    }
+
+    .flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
