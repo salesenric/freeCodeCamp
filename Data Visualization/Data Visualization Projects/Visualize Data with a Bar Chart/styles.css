@@ -1,0 +1,21 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+#container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#title {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+#chart {
+  display: block;
+  margin: 0 auto;
+}
