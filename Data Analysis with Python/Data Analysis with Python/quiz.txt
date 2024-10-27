@@ -1,0 +1,24 @@
+1. Which of the following is not part of Data Analysis?
+[ ] Building statistical models and data visualizations.
+[X] Picking a desired conclusion for the analysis.
+[ ] Fixing incorrect values and removing invalid data.
+[ ] Transforming data into an appropriate data structure.
+
+2. What does the shape of our dataframe tell us?
+[ ] The size in gigabytes the dataframe we loaded into memory is.
+[X] How many rows and columns our dataframe has.
+[ ] How many rows the source data had before loading.
+[ ] How many columns the source data had before loading.
+
+3. What does the loc method allow you to do?
+[ ] Retrieve a subset of rows and columns by supplying integer-location arguments.
+[X] Access a group of rows and columns by supplying label(s) arguments.
+[ ] Returns the first n rows based on the integer argument supplied.
+
+4. What is not allowed in a Jupyter Notebook's cell?
+[ ] Markdown
+[ ] Python code
+[X] An Excel sheet
+
+5. 
+
