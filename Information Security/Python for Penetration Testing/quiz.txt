@@ -1,0 +1,54 @@
+1. What code editor and extension does the instructor recommend for developing penetration testing tools in Python?
+
+[ ] Atom and the atom-python-run extension.
+[X] VSCode and Microsoft's Python extension.
+[ ] Sublime Text and the Anaconda package.
+
+2. Which of the following functions creates a socket object?
+
+[ ] socket.bind((host, port))
+[ ] socket.gethostbyname()
+[X] socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+3. Which socket object method lets you set the maximum amount of data your client accepts at once?
+
+[X] .recv(1024)
+[ ] .decode('ascii')
+[ ] .connect(host, port)
+
+4. What is the correct command to install the Python 3 version of the python-nmap library?
+
+[ ] sudo apt install python-nmap
+[ ] pip install python-nmap
+[X] pip3 install python-nmap
+
+5. Which of the following allows you to scan for UDP ports between 21 to 443?
+
+[X] .scan(ip_addr, '21-443', '-v -sU')
+[ ] .scan(ip_addr, '1-1024', '-v -sS')
+[ ] .scan(ip_addr, '21-443', '-v -sS')
+
+6. Fill in the blanks to complete the banner function below:
+
+def banner(ip, port):
+    s = socket.socket()
+    s.__A__((ip, __B__))
+    print(s.recv(1024))
+
+[ ] 
+A: connect
+B: port
+
+[ ] 
+A: getsockname
+B: '1-1024'
+
+[X] 
+A: connect
+B: int(port)
+
+7. What is the main difference between the .connect() and .connect_ex() methods?
+
+[ ] There is no difference between the two methods.
+[ ] If there is an error or if no host is found, .connect() returns an error code while .connect_ex() raises an exception.
+[X] If there is an error or if no host is found, .connect() raises an exception while .connect_ex() returns an error code.
