@@ -1,0 +1,337 @@
+1. Which statement below is false?
+
+[X] Neural networks are modeled after the way the human brain works.
+[ ] Computer programs that play tic-tac-toe or chess against human players are examples of simple artificial intelligence.
+[ ] Machine learning is a subset of artificial intelligence.
+
+2. Which of the following is not a type of tensor?
+
+[ ] Variable
+[X] Flowing
+[ ] Placeholder
+[ ] SparseTensor
+[ ] Constant
+
+3. Which type of analysis would be best suited for the following problem?:
+You have the average temperature in the month of March for the last 100 years. Using this data, you want to predict the average temperature in the month of March 5 years from now.
+
+[ ] Multiple regression
+[ ] Correlation
+[ ] Decision tree
+[X] Linear regression
+
+4. What does the pandas .head() function do?
+
+[ ] Returns the number of entries in a data frame.
+[ ] Returns the number of columns in a data frame.
+[X] By default, shows the first five rows or entries in a data frame.
+
+5. What is categorical data?
+
+[ ] Another term for one-hot encoding.
+[X] Any data that is not numeric.
+[ ] Any data that is represented numerically.
+
+6. What are epochs?
+
+[X] The number of times the model will see the same data.
+[ ] A type of graph.
+[ ] The number of elements you feed to the model at once.
+
+7. What is classification?
+
+[X] The process of separating data points into different classes.
+[ ] Predicting a numeric value or forecast based on independent and dependent variables.
+[ ] None of the above.
+
+8. What kind of estimator/model does TensorFlow recommend using for classification?
+
+[ ] LinearClassifier
+[X] DNNClassifier
+[ ] BoostedTreesClassifier
+
+9. Which of the following steps is not part of the K-Means algorithm?
+
+[ ] Randomly pick K points to place K centeroids.
+[ ] Assign each K point to the closest K centeroid.
+[ ] Move each K centeroid into the middle of all of their data points.
+[X] Shuffle the K points so they're redistributed randomly.
+[ ] Reassign each K point to the closest K centeroid.
+
+10. What makes a Hidden Markov model different than linear regression or classification?
+
+[x] It uses probability distributions to predict future events or states.
+[ ] It analyzes the relationship between independent and dependent variables to make predictions.
+[ ] It separates data points into separate categories.
+
+11. What TensorFlow module should you import to implement .HiddenMarkovModel()?
+
+[ ] tensorflow.keras
+[ ] tensorflow_gpu
+[x] tensorflow_probability
+
+12. A densely connected neural network is one in which...:
+
+[ ] all the neurons in the current layer are connected to one neuron in the previous layer.
+[ ] all the neurons in each layer are connected randomly.
+[x] all the neurons in the current layer are connected to every neuron in the previous layer.
+
+13. Which activation function squishes values between -1 and 1?
+
+[ ] ReLU (Rectified Linear Unit)
+[x] Tanh (Hyperbolic Tangent)
+[ ] Sigmoid
+
+14. What is an optimizer function?
+
+[ ] A function that increases the accuracy of a model's predictions.
+[X] A function that implements the gradient descent and backpropagation algorithms for you.
+[ ] A function that reduces the time a model needs to train.
+
+15. Fill in the blanks below to build a sequential model of dense layers:
+
+model = __A__.__B__([
+    __A__.layers.Flatten(input_shape=(28, 28)),
+    __A__.layers.__C__(128, activation='relu'),
+    __A__.layers.__C__(10, activation='softmax')
+])
+
+[X] 
+A: keras
+B: Sequential
+C: Dense
+
+[ ] 
+A: tf
+B: Sequential
+C: Categorical
+
+[ ] 
+A: keras
+B: sequential
+C: dense
+
+16. Dense neural networks analyze input on a global scale and recognize patterns in specific areas. Convolutional neural networks...:
+
+[ ] also analyze input globally and extract features from specific areas.
+[ ] do not work well for image classification or object detection.
+[X] scan through the entire input a little at a time and learn local patterns.
+
+17. What are the three main properties of each convolutional layer?
+
+[X] Input size, the number of filters, and the sample size of the filters.
+[ ] Input size, input dimensions, and the color values of the input.
+[ ] Input size, input padding, and stride.
+
+18. Fill in the blanks below to complete the architecture for a convolutional neural network:
+
+model = models.__A__()
+model.add(layers.__B__(32, (3, 3), activation='relu', input_shape=(32, 32, 3)))
+model.add(layers.__C__(2, 2))
+model.add(layers.__B__(64, (3, 3), activation='relu'))
+model.add(layers.__C__(2, 2))
+model.add(layers.__B__(32, (3, 3), activation='relu'))
+model.add(layers.__C__(2, 2))
+
+[ ] 
+A: Sequential
+B: add
+C: Wrapper
+
+[ ] 
+A: keras
+B: Cropping2D
+C: AlphaDropout
+
+[X] 
+A: Sequential
+B: Conv2D
+C: MaxPooling2D
+
+19. What is not a good way to increase the accuracy of a convolutional neural network?
+
+[ ] Augmenting the data you already have.
+[ ] Using a pre-trained model.
+[X] Using your test data to retrain the model.
+
+20. Fill in the blanks below to use Google's pre-trained MobileNet V2 model as a base for a convolutional neural network:
+
+base_model = tf.__A__.applications.__B__(input_shape=(160, 160, 3),
+                                               include_top=__C__,
+                                               weights='imagenet'
+                                               )
+
+[X] 
+A: keras
+B: MobileNetV2
+C: False
+
+[ ] 
+A: Keras
+B: MobileNetV2
+C: True
+
+[ ] 
+A: keras
+B: mobile_net_v2
+C: False
+
+21. Natural Language Processing is a branch of artificial intelligence that...:
+
+[X] deals with how computers understand and process natural/human languages.
+[ ] translates image data into natural/human languages.
+[ ] is focused on translating computer languages into natural/human languages.
+
+22. Word embeddings are...:
+
+[ ] an unordered group of encoded words that describes the frequency of words in a given document.
+[ ] a group of encoded words that preserves the original order of the words in a given document.
+[X] a vectorized representation of words in a given document that places words with similar meanings near each other.
+
+23. What is true about Recurrent Neural Networks?
+
+[ ] 1: They are a type of feed-forward neural network.
+[ ] 2: They maintain an internal memory/state of the input that was already processed.
+[ ] 3: RNN's contain a loop and process one piece of input at a time.
+[X] 4: Both 2 and 3.
+
+24. Fill in the blanks below to create the model for the RNN:
+
+model = __A__.keras.Sequential([
+    __A__.keras.layers.__B__(88584, 32),
+    __A__.keras.layers.__C__(32),
+    __A__.keras.layers.Dense(1, activation='sigmoid')
+])
+
+[ ] 
+A: tensor_flow
+B: embedding
+C: LSTM
+
+[ ] 
+A: tf
+B: Embedding
+C: AlphaDropout
+
+[X] 
+A: tf
+B: Embedding
+C: LSTM
+
+25. Before you make a prediction with your own review, you should...:
+
+[ ] decode the training dataset and compare the results to the test data.
+[X] use the encodings from the training dataset to encode your review.
+[ ] assign random values between 0 and the maximum number of vocabulary in your dataset to each word in your review.
+
+26. Fill in the blanks below to create the training examples for the RNN:
+
+char_dataset = tf.data.__A__.__B__(text_as_int)
+
+[X] 
+A: Dataset
+B: from_tensor_slices
+
+[ ] 
+A: data
+B: from_tensors
+
+[ ] 
+A: DataSet
+B: from_generator
+
+27. Fill in the blanks below to complete the build_model function:
+
+def build_mode(vocab_size, embedding_dim, rnn_units, batch_size):
+    model = tf.keras.Sequential([
+        tf.keras.layers.Embedding(vocab_size,
+                                  embedding_dim,
+                                  batch_input_shape=[batch_size, None]),
+        tf.keras.layers.__A__(rnn_units,
+                              return_sequences=__B__,
+                              recurrent_initializer='glorot_uniform),
+        tf.keras.layers.Dense(__C__)
+    ])
+    __D__
+
+[ ] 
+A: ELU
+B: True
+C: vocab_size
+D: return model
+
+[ ] 
+A: LSTM
+B: False
+C: batch_size
+D: return model
+
+[X] 
+A: LSTM
+B: True
+C: vocab_size
+D: return model
+
+28. Fill in the blanks below to save your model's checkpoints in the ./checkpoints directory and call the latest checkpoint for training:
+
+checkpoint_dir = __A__
+checkpoint_prefix = os.path.join(checkpoint_dir, 'ckpt_{epoch}')
+
+checkpoint_callback = tf.keras.callbacks.__B__(
+    filepath=checkpoint_prefix,
+    save_weights_only=True
+)
+
+history = model.fit(data, epochs=2, callbacks=[__C__])
+
+[ ] 
+A: './training_checkpoints'
+B: ModelCheckpoint
+C: checkpoint_prefix
+
+[X] 
+A: './checkpoints'
+B: ModelCheckpoint
+C: checkpoint_callback
+
+[ ] 
+A: './checkpoints'
+B: BaseLogger
+C: checkpoint_callback
+
+29. The key components of reinforcement learning are...
+
+[ ] environment, representative, state, reaction, and reward.
+[X] environment, agent, state, action, and reward.
+[ ] habitat, agent, state, action, and punishment.
+
+30. What can happen if the agent does not have a good balance of taking random actions and using learned actions?
+
+[ ] The agent will always try to minimize its reward for the current state/action, leading to local minima.
+[X] The agent will always try to maximize its reward for the current state/action, leading to local maxima.
+
+31. Fill in the blanks to complete the following Q-Learning equation:
+
+Q[__A__, __B__] = Q[__A__, __B__] + LEARNING_RATE * (reward + GAMMA * np.max(Q[__C__, :]) - Q[__A__, __B__])
+
+[X] 
+A: state
+B: action
+C: next_state
+
+[ ] 
+A: state
+B: action
+C: prev_state
+
+[ ] 
+A: state
+B: reaction
+C: next_state
+
+32. Most people that are experts in AI or machine learning usually...:
+
+[X] have one specialization.
+[ ] have many specializations.
+[ ] have a deep understanding of many different frameworks.
+
